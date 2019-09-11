@@ -36,16 +36,16 @@ class CrCkRecord(models.Model):
 
     cr_check_address = fields.Char(string=u'商铺地址', track_visibility='onchange')
 
-    cr_check_checker = fields.Many2one('res.user',string=u'检查人', track_visibility='onchange')
+    cr_check_checker = fields.Many2one('res.partner',string=u'检查人')
 
     cr_check_check_date = fields.Datetime(string=u'检查日期', track_visibility='onchange')
 
 #to_do 'res.user'
-    cr_check_problem_type = fields.Many2one('res.user',string=u'问题分类', track_visibility='onchange')
+    cr_check_problem_type = fields.Many2one('cr.base.fault.type',string=u'问题分类', track_visibility='onchange')
 
-    cr_check_refine_type = fields.Many2one('res.user',string=u'细化分类', track_visibility='onchange')
+    cr_check_refine_type = fields.Many2one('cr.base.refine.type',string=u'细化分类', track_visibility='onchange')
 
-    cr_check_problem_content = fields.Many2one('res.user',string=u'问题内容', track_visibility='onchange')
+    cr_check_problem_content = fields.Many2one('cr.base.fault.content',string=u'问题内容', track_visibility='onchange')
 
     cr_check_description = fields.Text(string=u'详细描述', track_visibility='onchange')
 
