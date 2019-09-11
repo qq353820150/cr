@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <menuitem id="menu_cr_cc"
+            name="企业文化"
+            sequence="90" />
+
+        <menuitem id="menu_cr_cc_ldjh"
+            name="领导讲话"
+            parent="menu_cr_cc"
+            sequence="2"/>
+
+        <menuitem id="menu_cr_cc_qyxc"
+            name="企业相册"
+            parent="menu_cr_cc"
+            sequence="102"/>
+
+
+        <record id="cr_cc_ldjh_tree" model="ir.ui.view">
+            <field name="name">cr.cc.ldjh.tree</field>
+            <field name="model">cr.cc.ldjh</field>
+            <field name="arch" type="xml">
+                <tree string="领导讲话">
+                    <field name="cr_ccls_news_title" string="新闻标题"/>
+                    <field name="cr_ccls_datetime" string="编辑时间"/>
+                    <field name="cr_ccls_introduction" string="简介"/>
+                    <field name="cr_ccls_order" string="排序值"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="cr_cc_ldjh_form" model="ir.ui.view">
+            <field name="name">cr.cc.ldjh.form</field>
+            <field name="model">cr.cc.ldjh</field>
+            <field name="arch" type="xml">
+                <form string="领导讲话">
+                    <group>
+                        <field name="cr_ccls_news_title" string="新闻标题"/>
+                    <field name="cr_ccls_datetime" string="编辑时间"/>
+                    <field name="cr_ccls_introduction" string="简介"/>
+                    <field name="cr_ccls_order" string="排序值"/>
+                    <field name="cr_ccls_filepath" string="文件地址"/>
+                    <field name="cr_ccls_content" string="内容"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+            <record model="ir.actions.act_window" id="action_cr_cc_ldjh">
+            <field name="name">领导讲话</field>
+            <field name="res_model">cr.cc.ldjh</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    <menuitem id="menu_cr_cc_ldjh" name="领导讲话" parent="menu_cr_cc"
+            action="action_cr_cc_ldjh" sequence="15"/>
+
+
+
+</odoo>

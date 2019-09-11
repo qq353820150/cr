@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="menu_cr_base"
+              name="系统信息"
+              sequence="90"/>
+
+
+    <record id="cr_base_company_tree" model="ir.ui.view">
+        <field name="name">cr.base.company.tree</field>
+        <field name="model">cr.base.company</field>
+        <field name="arch" type="xml">
+            <tree string="分公司">
+                <field name="cr_base_company_name" string="分公司名称"/>
+                <field name="cr_base_company_id" string="分公司id"/>
+                <field name="cr_base_part_id" string="属地站段"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="cr_base_company_form" model="ir.ui.view">
+        <field name="name">cr.base.company.form</field>
+        <field name="model">cr.base.company</field>
+        <field name="arch" type="xml">
+            <form string="分公司">
+                <group>
+                    <field name="cr_base_company_name" string="分公司名称"/>
+                    <field name="cr_base_company_id" string="分公司id"/>
+                    <field name="cr_base_part_id" string="属地站段"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_cr_base_company">
+        <field name="name">分公司</field>
+        <field name="res_model">cr.base.company</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_cr_base_company" name="分公司" parent="menu_cr_base"
+              action="action_cr_base_company" sequence="15"/>
+
+
+    <record id="cr_base_part_tree" model="ir.ui.view">
+        <field name="name">cr.base.part.tree</field>
+        <field name="model">cr.base.part</field>
+        <field name="arch" type="xml">
+            <tree string="属地站段">
+                <field name="cr_base_part_name" string="站段名称"/>
+                <field name="cr_base_part_id" string="站段id"/>
+                <field name="cr_base_station_id" string="所在车站"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="cr_base_part_form" model="ir.ui.view">
+        <field name="name">cr.base.part.form</field>
+        <field name="model">cr.base.part</field>
+        <field name="arch" type="xml">
+            <form string="所属站段">
+                <group>
+                    <field name="cr_base_part_name" string="站段名称"/>
+                    <field name="cr_base_part_id" string="站段id"/>
+                    <field name="cr_base_station_id" string="所在车站"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_cr_base_part">
+        <field name="name">所属站段</field>
+        <field name="res_model">cr.base.part</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_cr_base_part" name="所属站段" parent="menu_cr_base"
+              action="action_cr_base_part" sequence="15"/>
+
+
+    <record id="cr_base_station_tree" model="ir.ui.view">
+        <field name="name">cr.base.station.tree</field>
+        <field name="model">cr.base.station</field>
+        <field name="arch" type="xml">
+            <tree string="所在车站">
+                <field name="cr_base_station_name" string="车站名称"/>
+                <field name="cr_base_station_id" string="车站id"/>
+                <field name="cr_base_position_id" string="经营位置"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="cr_base_station_form" model="ir.ui.view">
+        <field name="name">cr.base.station.form</field>
+        <field name="model">cr.base.station</field>
+        <field name="arch" type="xml">
+            <form string="所在车站">
+                <group>
+                    <field name="cr_base_station_name" string="车站名称"/>
+                    <field name="cr_base_station_id" string="车站id"/>
+                    <field name="cr_base_position_id" string="经营位置"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_cr_base_station">
+        <field name="name">所在车站</field>
+        <field name="res_model">cr.base.station</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_cr_base_station" name="所在车站" parent="menu_cr_base"
+              action="action_cr_base_station" sequence="15"/>
+
+
+    <record id="cr_base_position_tree" model="ir.ui.view">
+        <field name="name">cr.base.position.tree</field>
+        <field name="model">cr.base.position</field>
+        <field name="arch" type="xml">
+            <tree string="经营位置">
+                <field name="cr_base_position_name" string="位置名称"/>
+                <field name="cr_base_position_id" string="位置id"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="cr_base_position_form" model="ir.ui.view">
+        <field name="name">cr.base.position.form</field>
+        <field name="model">cr.base.position</field>
+        <field name="arch" type="xml">
+            <form string="经营位置">
+                <group>
+                    <field name="cr_base_position_name" string="位置名称"/>
+                    <field name="cr_base_position_id" string="位置id"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+
+</odoo>

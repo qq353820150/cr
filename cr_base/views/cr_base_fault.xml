@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id="cr_base_fault_type_tree" model="ir.ui.view">
+        <field name="name">cr.base.fault.type.tree</field>
+        <field name="model">cr.base.fault.type</field>
+        <field name="arch" type="xml">
+            <tree string="问题分类">
+                <field name="cr_base_fault_type_name" string="问题分类名称"/>
+                <field name="cr_base_fault_type_id" string="问题分类id"/>
+                <field name="cr_base_refine_type_id" string="细化分类"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="cr_base_fault_type_form" model="ir.ui.view">
+        <field name="name">cr.base.fault.type.form</field>
+        <field name="model">cr.base.fault.type</field>
+        <field name="arch" type="xml">
+            <form string="问题分类">
+                <group>
+                    <field name="cr_base_fault_type_name" string="问题分类名称"/>
+                    <field name="cr_base_fault_type_id" string="问题分类id"/>
+                    <field name="cr_base_refine_type_id" string="细化分类"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_cr_base_fault_type">
+        <field name="name">问题分类</field>
+        <field name="res_model">cr.base.fault.type</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+
+    <record id="cr_base_refine_type_tree" model="ir.ui.view">
+        <field name="name">cr.base.refine.type.tree</field>
+        <field name="model">cr.base.refine.type</field>
+        <field name="arch" type="xml">
+            <tree string="细化分类">
+                <field name="cr_base_refine_type_name" string="细化分类名称"/>
+                <field name="cr_base_refine_type_id" string="细化分类id"/>
+                <field name="cr_base_fault_content_id" string="问题内容"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="cr_base_refine_type_form" model="ir.ui.view">
+        <field name="name">cr.base.refine.type.form</field>
+        <field name="model">cr.base.refine.type</field>
+        <field name="arch" type="xml">
+            <form string="细化分类">
+                <group>
+                    <field name="cr_base_refine_type_name" string="细化分类名称"/>
+                    <field name="cr_base_refine_type_id" string="细化分类id"/>
+                    <field name="cr_base_fault_content_id" string="问题内容"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_cr_base_refine_type">
+        <field name="name">细化分类</field>
+        <field name="res_model">cr.base.refine.type</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+
+    <record id="cr_base_fault_content_tree" model="ir.ui.view">
+        <field name="name">cr.base.fault.content.tree</field>
+        <field name="model">cr.base.fault.content</field>
+        <field name="arch" type="xml">
+            <tree string="经营项目">
+                <field name="cr_base_fault_content_name" string="项目名称"/>
+                <field name="cr_base_fault_content_id" string="项目id"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="cr_base_fault_content_form" model="ir.ui.view">
+        <field name="name">cr.base.fault.content.form</field>
+        <field name="model">cr.base.fault.content</field>
+        <field name="arch" type="xml">
+            <form string="经营项目">
+                <group>
+                    <field name="cr_base_fault_content_name" string="项目名称"/>
+                    <field name="cr_base_fault_content_id" string="项目id"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+
+
+    <menuitem id="menu_cr_base_fault" name="问题" parent="menu_cr_base"
+              action="action_cr_base_fault_type" sequence="15"/>
+
+    <menuitem id="menu_cr_base_fault_type" name="问题分类" parent="menu_cr_base_fault"
+              action="action_cr_base_fault_type" sequence="15"/>
+
+    <menuitem id="menu_cr_base_refine_type" name="细化分类" parent="menu_cr_base_fault"
+              action="action_cr_base_refine_type" sequence="15"/>
+</odoo>

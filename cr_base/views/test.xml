@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="cr_base_refine_type_tree" model="ir.ui.view">
+            <field name="name">cr.base.refine.type.tree</field>
+            <field name="model">cr.base.refine.type</field>
+            <field name="arch" type="xml">
+                <tree string="细化分类">
+                    <field name="cr_base_refine_type_name" string="细化分类名称"/>
+                    <field name="cr_base_refine_type_id" string="细化分类id"/>
+                    <field name="cr_base_fault_id" string="问题内容"/>
+                </tree>
+            </field>
+</record>
+    
+    
+    <record id="cr_base_refine_type_form" model="ir.ui.view">
+        <field name="name">cr.base.refine.type.form</field>
+        <field name="model">cr.base.refine.type</field>
+        <field name="arch" type="xml">
+            <form string="细化分类">
+                <group>
+                    <field name="cr_base_refine_type_name" string="细化分类名称"/>
+                    <field name="cr_base_refine_type_id" string="细化分类id"/>
+                    <field name="cr_base_fault_id" string="问题内容"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+            <record model="ir.actions.act_window" id="action_cr_base_refine_type">
+            <field name="name">细化分类</field>
+            <field name="res_model">cr.base.refine.type</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    <menuitem id="menu_cr_base_refine_type" name="细化分类" parent="menu_cr_base"
+            action="action_cr_base_refine_type" sequence="15"/>
+
+
+</odoo>

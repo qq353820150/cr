@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <!-- bus res_partner.py -->
+        <record id="cr_station_location_type_first" model="cr.station.location.type">
+            <field name="name">平层</field>
+            <field name="code">first</field>
+        </record>
+        <record id="cr_station_location_type_second" model="cr.station.location.type">
+            <field name="name">高层</field>
+            <field name="code">second</field>
+        </record>
+
+
+
+
+</odoo>

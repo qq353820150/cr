@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="menu_cr_check"
+              name="现场检查"
+              sequence="90"/>
+
+
+    <record id="cr_check_record_tree" model="ir.ui.view">
+        <field name="name">cr.check.record.tree</field>
+        <field name="model">cr.check.record</field>
+        <field name="arch" type="xml">
+            <tree string="现场检查">
+                <field name="cr_check_company_name" string="分公司名称"/>
+                <field name="cr_check_customer_name" string="客户名称"/>
+                <field name="cr_check_part" string="属地站段"/>
+                <field name="cr_check_position" string="经营位置"/>
+                <field name="cr_check_address" string="商铺地址"/>
+                <field name="cr_check_checker" string="检查人"/>
+                <field name="cr_check_check_date" string="检查日期"/>
+                <field name="cr_check_problem_type" string="问题分类"/>
+                <field name="cr_check_refine_type" string="细化分类"/>
+                <field name="cr_check_problem_content" string="问题内容"/>
+                <field name="cr_check_description" string="详细描述"/>
+                <field name="cr_check_problem_nature" string="问题性质"/>
+                <field name="cr_check_disposal_status" string="处置状态"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="cr_check_record_form" model="ir.ui.view">
+        <field name="name">cr.check.record.form</field>
+        <field name="model">cr.check.record</field>
+        <field name="arch" type="xml">
+            <form string="领导讲话">
+                <group>
+                    <field name="cr_check_start_time" string="开始时间"/>
+                    <field name="cr_check_end_time" string="结束时间"/>
+                    <field name="cr_check_check_date" string="检查日期"/>
+                    <field name="cr_check_company_name" string="分公司名称"/>
+                    <field name="cr_check_station" string="所在车站"/>
+                    <field name="cr_check_customer_type" string="客户类型"/>
+                    <field name="cr_check_customer_name" string="客户名称"/>
+                    <field name="cr_check_part" string="属地站段"/>
+                    <field name="cr_check_address" string="商铺地址"/>
+                    <field name="cr_check_position" string="经营位置"/>
+                    <field name="cr_check_checker" string="检查人"/>
+                    <field name="cr_check_problem_type" string="问题分类"/>
+                    <field name="cr_check_refine_type" string="细化分类"/>
+                    <field name="cr_check_problem_content" string="问题内容"/>
+                    <field name="cr_check_description" string="详细描述"/>
+                    <field name="cr_check_problem_preview" string="问题预览"/>
+                    <field name="cr_check_problem_nature" string="问题性质"/>
+                    <field name="cr_check_problem_image" string="问题图片"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_cr_check_record">
+        <field name="name">现场检查</field>
+        <field name="res_model">cr.check.record</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_cr_check_record" name="现场检查" parent="menu_cr_check"
+              action="action_cr_check_record" sequence="15"/>
+
+
+</odoo>

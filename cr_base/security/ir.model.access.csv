@@ -1,0 +1,11 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_cr_base_company","cr_base_company group_user","model_cr_base_company","base.group_user",1,1,1,1
+"access_cr_base_part","cr_base_part group_user","model_cr_base_part","base.group_user",1,1,1,1
+"access_cr_base_station","cr_base_station group_user","model_cr_base_station","base.group_user",1,1,1,1
+"access_cr_base_position","cr_base_position group_user","model_cr_base_position","base.group_user",1,1,1,1
+"access_cr_base_project_type","cr_base_project_type group_user","model_cr_base_project_type","base.group_user",1,1,1,1
+"access_cr_base_project","cr_base_project group_user","model_cr_base_project","base.group_user",1,1,1,1
+"access_cr_base_fault_type","cr_base_fault_type group_user","model_cr_base_fault_type","base.group_user",1,1,1,1
+"access_cr_base_refine_type","cr_base_refine_type group_user","model_cr_base_refine_type","base.group_user",1,1,1,1
+"access_cr_base_fault_content","cr_base_fault_content group_user","model_cr_base_fault_content","base.group_user",1,1,1,1
+
