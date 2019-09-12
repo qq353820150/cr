@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="cr_sydw_xfss_tree" model="ir.ui.view">
+        <field name="name">cr.sydw.xfss.tree</field>
+        <field name="model">cr.sydw.xfss</field>
+        <field name="arch" type="xml">
+            <tree string="消防设施">
+                <field name="cr_xfss_device_name" string="设备名称"/>
+                <field name="cr_xfss_business_name" string="商户名称"/>
+                <field name="cr_xfss_device_model" string="设备型号"/>
+                <field name="cr_xfss_install_date" string="安装日期"/>
+                <field name="cr_xfss_header" string="负责人"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="cr_sydw_xfss_form" model="ir.ui.view">
+        <field name="name">cr.sydw.xfss.form</field>
+        <field name="model">cr.sydw.xfss</field>
+        <field name="arch" type="xml">
+            <form string="消防设施">
+                <group>
+                    <field name="cr_xfss_device_name" string="设备名称"/>
+                    <field name="cr_xfss_business_name" string="商户名称"/>
+                    <field name="cr_xfss_device_model" string="设备型号"/>
+                    <field name="cr_xfss_install_date" string="安装日期"/>
+                    <field name="cr_xfss_header" string="负责人"/>
+                    <field name="cr_xfss_manufacturer" string="生产厂家"/>
+                    <field name="cr_xfss_exit_number" string="出厂编号"/>
+                    <field name="cr_xfss_defend_cycle" string="维护周期"/>
+                    <field name="cr_xfss_check_cycle" string="检查周期"/>
+                    <field name="cr_xfss_age_limit" string="准用年限"/>
+                    <field name="cr_xfss_remark" string="备注"/>
+
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_cr_xfss">
+        <field name="name">消防设施</field>
+        <field name="res_model">cr.sydw.xfss</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_cr_xfss" parent="menu_cr_sydw"
+              name="消防设施" action="action_cr_xfss" sequence="29"/>
+
+</odoo>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id="cr_sydw_cyry_tree" model="ir.ui.view">
+        <field name="name">cr.sydw.cyry.tree</field>
+        <field name="model">cr.sydw.cyry</field>
+        <field name="arch" type="xml">
+            <tree string="从业人员">
+                <field name="cr_cyry_business_name" string="商户名称"/>
+                <field name="cr_cyry_name" string="姓名"/>
+                <field name="cr_cyry_gender" string="性别"/>
+                <field name="cr_cyry_number" string="工号"/>
+                <field name="cr_cyry_health_validity" string="健康证有效期"/>
+                <field name="cr_cyry_post" string="职务"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="cr_sydw_cyry_form" model="ir.ui.view">
+        <field name="name">cr.sydw.cyry.form</field>
+        <field name="model">cr.sydw.cyry</field>
+        <field name="arch" type="xml">
+            <form string="从业人员">
+                <group>
+                    <field name="cr_cyry_business_name" string="商户名称"/>
+                <field name="cr_cyry_name" string="姓名"/>
+                <field name="cr_cyry_gender" string="性别"/>
+                <field name="cr_cyry_number" string="工号"/>
+                <field name="cr_cyry_health_validity" string="健康证有效期"/>
+                <field name="cr_cyry_post" string="职务"/>
+                <field name="cr_cyry_phone" string="手机"/>
+                <field name="cr_cyry_health_certificate" string="健康证"/>
+                <field name="cr_cyry_health_start" string="健康证有效期起"/>
+                <field name="cr_cyry_health_end" string="健康证有效期止"/>
+                <field name="cr_cyry_badge" string="胸卡"/>
+                <field name="cr_cyry_badge_start" string="胸卡有效期起"/>
+                <field name="cr_cyry_badge_end" string="胸卡有效期止"/>
+                <field name="cr_cyry_score" string="入职考试成绩"/>
+                <field name="cr_cyry_remark" string="备注"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_cr_cyry">
+        <field name="name">从业人员</field>
+        <field name="res_model">cr.sydw.cyry</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem id="menu_cr_cyry" parent="menu_cr_sydw"
+              name="从业人员" action="action_cr_cyry" sequence="28"/>
+
+</odoo>

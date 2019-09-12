@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="cr_sydw_ydss_tree" model="ir.ui.view">
+        <field name="name">cr.sydw.ydss.tree</field>
+        <field name="model">cr.sydw.ydss</field>
+        <field name="arch" type="xml">
+            <tree string="用电设施">
+                <field name="cr_ydss_device_name" string="设备名称"/>
+                <field name="cr_ydss_business_name" string="商户名称"/>
+                <field name="cr_ydss_device_model" string="设备型号"/>
+                <field name="cr_ydss_voltage" string="额度电源（v）"/>
+                <field name="cr_ydss_power" string="额度功率（w）"/>
+                <field name="cr_ydss_electricity" string="额度电流（A）"/>
+                <field name="cr_ydss_use" string="用途"/>
+                <field name="cr_ydss_install_date" string="安装时间"/>
+                <field name="cr_ydss_header" string="负责人"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="cr_sydw_ydss_form" model="ir.ui.view">
+        <field name="name">cr.sydw.ydss.form</field>
+        <field name="model">cr.sydw.ydss</field>
+        <field name="arch" type="xml">
+            <form string="用电设施">
+                <sheet>
+                <group>
+                    <field name="cr_ydss_device_name" string="设备名称"/>
+                    <field name="cr_ydss_business_name" string="商户名称"/>
+                    <field name="cr_ydss_device_model" string="设备型号"/>
+                    <field name="cr_ydss_voltage" string="额度电源（v）"/>
+                    <field name="cr_ydss_power" string="额度功率（w）"/>
+                    <field name="cr_ydss_electricity" string="额度电流（A）"/>
+                    <field name="cr_ydss_use" string="用途"/>
+                    <field name="cr_ydss_install_date" string="安装时间"/>
+                    <field name="cr_ydss_header" string="负责人"/>
+                    <field name="cr_ydss_main_power" string="总电源"/>
+                </group>
+                <group>
+                    <field name="cr_ydss_ambient_temp" string="环境温度"/>
+                    <field name="cr_ydss_damaged" string="有无破损"/>
+                    <field name="cr_ydss_check_cycle" string="检查周期"/>
+                    <field name="cr_ydss_clean" string="清洗公司"/>
+                    <field name="cr_ydss_surface_temp" string="表面温度"/>
+                    <field name="cr_ydss_dielectric" string="绝缘强度"/>
+                    <field name="cr_ydss_running_state" string="运行状态"/>
+                    <field name="cr_ydss_checker" string="检查人"/>
+                    <field name="cr_ydss_cleaning_time" string="清洗时间"/>
+                    <field name="cr_ydss_remark" string="备注"/>
+                </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_cr_ydss">
+        <field name="name">用电设施</field>
+        <field name="res_model">cr.sydw.ydss</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_cr_ydss" parent="menu_cr_sydw"
+              name="用电设施" action="action_cr_ydss" sequence="29"/>
+
+</odoo>

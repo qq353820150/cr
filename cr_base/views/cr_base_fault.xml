@@ -43,6 +43,7 @@
         <field name="model">cr.base.refine.type</field>
         <field name="arch" type="xml">
             <tree string="细化分类">
+                <field name="cr_base_fault_type_id" string="问题分类"/>
                 <field name="cr_base_refine_type_name" string="细化分类名称"/>
                 <field name="cr_base_refine_type_id" string="细化分类id"/>
                 <field name="cr_base_fault_content_id" string="问题内容"/>
@@ -57,6 +58,7 @@
         <field name="arch" type="xml">
             <form string="细化分类">
                 <group>
+                    <field name="cr_base_fault_type_id" string="问题分类"/>
                     <field name="cr_base_refine_type_name" string="细化分类名称"/>
                     <field name="cr_base_refine_type_id" string="细化分类id"/>
                     <field name="cr_base_fault_content_id" string="问题内容"/>
@@ -79,6 +81,7 @@
         <field name="model">cr.base.fault.content</field>
         <field name="arch" type="xml">
             <tree string="问题内容">
+                <field name="cr_base_refine_type_id" string="细化分类"/>
                 <field name="cr_base_fault_content_name" string="问题内容"/>
                 <field name="cr_base_fault_content_id" string="问题id"/>
             </tree>
@@ -92,6 +95,7 @@
         <field name="arch" type="xml">
             <form string="问题内容">
                 <group>
+                    <field name="cr_base_refine_type_id" string="细化分类"/>
                     <field name="cr_base_fault_content_name" string="问题内容"/>
                     <field name="cr_base_fault_content_id" string="问题id"/>
                 </group>

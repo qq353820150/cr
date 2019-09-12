@@ -48,6 +48,7 @@
         <field name="model">cr.base.part</field>
         <field name="arch" type="xml">
             <tree string="属地站段">
+                <field name="cr_base_company_id" string="分公司id"/>
                 <field name="cr_base_part_name" string="站段名称"/>
                 <field name="cr_base_part_id" string="站段id"/>
                 <field name="cr_base_station_id" string="所在车站"/>
@@ -61,6 +62,7 @@
         <field name="arch" type="xml">
             <form string="所属站段">
                 <group>
+                    <field name="cr_base_company_id" string="分公司id"/>
                     <field name="cr_base_part_name" string="站段名称"/>
                     <field name="cr_base_part_id" string="站段id"/>
                     <field name="cr_base_station_id" string="所在车站"/>
@@ -85,6 +87,7 @@
         <field name="model">cr.base.station</field>
         <field name="arch" type="xml">
             <tree string="所在车站">
+                <field name="cr_base_part_id" string="站段id"/>
                 <field name="cr_base_station_name" string="车站名称"/>
                 <field name="cr_base_station_id" string="车站id"/>
                 <field name="cr_base_position_id" string="经营位置"/>
@@ -98,6 +101,7 @@
         <field name="arch" type="xml">
             <form string="所在车站">
                 <group>
+                    <field name="cr_base_part_id" string="站段id"/>
                     <field name="cr_base_station_name" string="车站名称"/>
                     <field name="cr_base_station_id" string="车站id"/>
                     <field name="cr_base_position_id" string="经营位置"/>
@@ -122,6 +126,7 @@
         <field name="model">cr.base.position</field>
         <field name="arch" type="xml">
             <tree string="经营位置">
+                <field name="cr_base_station_id" string="车站id"/>
                 <field name="cr_base_position_name" string="位置名称"/>
                 <field name="cr_base_position_id" string="位置id"/>
             </tree>
@@ -135,6 +140,7 @@
         <field name="arch" type="xml">
             <form string="经营位置">
                 <group>
+                    <field name="cr_base_station_id" string="车站id"/>
                     <field name="cr_base_position_name" string="位置名称"/>
                     <field name="cr_base_position_id" string="位置id"/>
                 </group>

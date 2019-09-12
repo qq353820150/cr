@@ -18,8 +18,8 @@ class CrCcQyxc(models.Model):
 
     cr_ccxc_introduction = fields.Char(string=u'简介', track_visibility='onchange')
 
-    cr_ccxc_photo = fields.Binary(string=u'图片', track_visibility='onchange')
+    cr_ccxc_photo = fields.Binary(string=u'图片')
 
     cr_ccxc_groupname = fields.Char(string=u'分组名称', track_visibility='onchange')
 
-    cr_ccxc_creater = fields.Many2one('res.user',string=u'创建人', track_visibility='onchange')
+    cr_ccxc_creater = fields.Many2one('res.users',string=u'创建人', default=lambda self: self.env.user,track_visibility='onchange')

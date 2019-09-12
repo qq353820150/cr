@@ -1,0 +1,5 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_cr_sydw_cyry","cr_sydw_cyry group_user","model_cr_sydw_cyry","base.group_user",1,1,1,1
+"access_cr_sydw_ydss","cr_sydw_ydss group_user","model_cr_sydw_ydss","base.group_user",1,1,1,1
+"access_cr_sydw_xfss","cr_sydw_xfss group_user","model_cr_sydw_xfss","base.group_user",1,1,1,1
+"access_cr_sydw","cr_sydw group_user","model_cr_sydw","base.group_user",1,1,1,1

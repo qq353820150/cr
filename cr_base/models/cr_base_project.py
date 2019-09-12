@@ -32,4 +32,6 @@ class CrBaseProject(models.Model):
 
     cr_base_project_id = fields.Char(string=u'项目id', track_visibility='onchange',required=True)
 
+    cr_base_project_type_id =fields.Many2one('cr.base.project.type',u'业态类别')
+
 

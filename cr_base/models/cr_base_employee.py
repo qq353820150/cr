@@ -10,10 +10,11 @@ import logging
 _logger = logging.getLogger(__name__)
 
 
-class CrBaseFaultType(models.Model):
+class CrBaseEmployee(models.Model):
 
-    _name = 'cr.base.fault.type'
+    _name = 'cr.base.employee'
     _rec_name = 'cr_base_fault_type_name'
+
     _description = u'问题分类'
     # _inherit = ['mail.thread', 'ir.needaction_mixin']  # 备注信息轨迹记录
 
@@ -21,7 +22,7 @@ class CrBaseFaultType(models.Model):
 
     cr_base_fault_type_id = fields.Char(string=u'问题分类id', track_visibility='onchange',required=True)
 
-    cr_base_refine_type_id = fields.One2many('cr.base.refine.type','cr_base_fault_type_id',string='细化分类')
+    cr_base_refine_type_id = fields.One2many('cr.base.refine.type','cr_base_refine_type_id',string='细化分类')
 
 class CrBaseRefineType(models.Model):
 
@@ -34,9 +35,7 @@ class CrBaseRefineType(models.Model):
 
     cr_base_refine_type_id = fields.Char(string=u'细化分类id', track_visibility='onchange',required=True)
 
-    cr_base_fault_content_id = fields.One2many('cr.base.fault.content','cr_base_refine_type_id',string='问题内容')
-
-    cr_base_fault_type_id =fields.Many2one('cr.base.fault.type')
+    cr_base_fault_content_id = fields.One2many('cr.base.fault.content','cr_base_fault_content_id',string='问题内容')
 
 
 class CrBaseFaultContent(models.Model):
@@ -49,6 +48,4 @@ class CrBaseFaultContent(models.Model):
     cr_base_fault_content_name = fields.Char(string=u'问题名称', track_visibility='onchange',required=True)
 
     cr_base_fault_content_id = fields.Char(string=u'问题id', track_visibility='onchange',required=True)
-
-    cr_base_refine_type_id =fields.Many2one('cr.base.refine.type')
 

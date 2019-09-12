@@ -17,13 +17,13 @@ class CrCkRecord(models.Model):
     _description = u'现场检查'
     # _inherit = ['mail.thread', 'ir.needaction_mixin']  # 备注信息轨迹记录
 
-    cr_check_start_time = fields.Datetime(string=u'开始时间', track_visibility='onchange',required=True)
+    cr_check_start_time = fields.Datetime(string=u'开始时间',default=fields.Datetime.now, track_visibility='onchange',required=True)
 
-    cr_check_end_time = fields.Datetime(string=u'结束时间', track_visibility='onchange')
+    cr_check_end_time = fields.Datetime(string=u'结束时间',default=fields.Datetime.now, track_visibility='onchange')
 
     cr_check_station = fields.Many2one('cr.base.station',string=u'所在车站', track_visibility='onchange')
 
-    cr_check_customer_type = fields.Selection([('0',u'商业点位'),('1',u'自营点位')],string=u'客户类型', track_visibility='onchange')
+    cr_check_customer_type = fields.Selection([('0',u'商业点位'),('1',u'自营点位')],default='0',string=u'客户类型', track_visibility='onchange')
 
     cr_check_company_name = fields.Many2one('cr.base.company',string=u'分公司名称', track_visibility='onchange')
 
@@ -38,7 +38,7 @@ class CrCkRecord(models.Model):
 
     cr_check_checker = fields.Many2one('res.partner',string=u'检查人')
 
-    cr_check_check_date = fields.Datetime(string=u'检查日期', track_visibility='onchange')
+    cr_check_check_date = fields.Datetime(string=u'检查日期',default=fields.Datetime.now, track_visibility='onchange')
 
 #to_do 'res.user'
     cr_check_problem_type = fields.Many2one('cr.base.fault.type',string=u'问题分类', track_visibility='onchange')
@@ -53,11 +53,25 @@ class CrCkRecord(models.Model):
 
     cr_check_problem_image = fields.Binary(string=u'问题图片', track_visibility='onchange')
 
-    cr_check_problem_nature = fields.Selection([('0',u'不发牌'),('1',u'红牌'),('2',u'黄牌'),('3',u'白牌')],string=u'问题性质', track_visibility='onchange')
+    cr_check_problem_nature = fields.Selection([('0',u'不发牌'),('1',u'红牌'),('2',u'黄牌'),('3',u'白牌')],default='0',string=u'问题性质', track_visibility='onchange')
 
-    cr_check_disposal_status = fields.Selection([('0',u'不发牌'),('1',u'处置中'),('2',u'待销号'),('3',u'已销号')],string=u'处置状态', track_visibility='onchange')
+    cr_check_disposal_status = fields.Selection([('0',u'不发牌'),('1',u'处置中'),('2',u'待销号'),('3',u'已销号')],default='0',string=u'处置状态', track_visibility='onchange')
 
+    @api.multi
+    def commit(self):
+        self.cr_check_disposal_status = '1'
 
+    @api.multi
+    def deal(self):
+        self.cr_check_disposal_status = '2'
+
+    @api.multi
+    def agree_cancel(self):
+        self.cr_check_disposal_status = '3'
+
+    @api.multi
+    def rectify(self):
+        self.cr_check_disposal_status = '1'
 
 
 

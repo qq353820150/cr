@@ -21,7 +21,7 @@ class CrBaseCompany(models.Model):
 
     cr_base_company_id = fields.Char(string=u'分公司id', track_visibility='onchange',required=True)
 
-    cr_base_part_id = fields.One2many('cr.base.part','cr_base_part_id',string='属地站段')
+    cr_base_part_id = fields.One2many('cr.base.part','cr_base_company_id',string='属地站段')
 
 class CrBasePart(models.Model):
 
@@ -34,9 +34,9 @@ class CrBasePart(models.Model):
 
     cr_base_part_id = fields.Char(string=u'站段id', track_visibility='onchange',required=True)
 
-    cr_base_station_id = fields.One2many('cr.base.station','cr_base_station_id',string='车站')
+    cr_base_station_id = fields.One2many('cr.base.station','cr_base_part_id',string='车站')
 
-    # cr_base_company_id = fields.Many2one('cr.base.company',  string='分公司')
+    cr_base_company_id = fields.Many2one('cr.base.company',  string='分公司')
 
 class CrBaseStation(models.Model):
 
@@ -49,9 +49,9 @@ class CrBaseStation(models.Model):
 
     cr_base_station_id = fields.Char(string=u'车站id', track_visibility='onchange',required=True)
 
-    cr_base_position_id = fields.One2many('cr.base.position','cr_base_position_id',string='经营位置')
+    cr_base_position_id = fields.One2many('cr.base.position','cr_base_station_id',string='经营位置')
 
-    # cr_base_part_id = fields.Many2one('cr.base.part',string='属地站段')
+    cr_base_part_id = fields.Many2one('cr.base.part',string='属地站段')
 
 class CrBasePosition(models.Model):
 
@@ -64,4 +64,4 @@ class CrBasePosition(models.Model):
 
     cr_base_position_id = fields.Char(string=u'位置id', track_visibility='onchange',required=True)
 
-    # cr_base_station_id = fields.Many2one('cr.base.station','cr_base_station_id',string='所在车站')
+    cr_base_station_id = fields.Many2one('cr.base.station',string='所在车站')

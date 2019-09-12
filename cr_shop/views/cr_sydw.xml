@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="menu_cr_sydw"
+              name="商业点位"
+              sequence="90"/>
+
+    <record id="cr_sydw_tree" model="ir.ui.view">
+        <field name="name">cr.sydw.tree</field>
+        <field name="model">cr.sydw</field>
+        <field name="arch" type="xml">
+            <tree string="商业点位">
+                 <field name="cr_sydw_company" string="所属分公司"/>
+                    <field name="cr_sydw_customer_name" string="客户名称"/>
+                    <field name="cr_sydw_station" string="所在车站"/>
+                    <field name="cr_sydw_part" string="属地站段"/>
+                    <field name="cr_sydw_position" string="经营位置"/>
+                    <field name="cr_sydw_address" string="商铺地址"/>
+                    <field name="cr_sydw_project" string="经营项目"/>
+                    <field name="cr_sydw_project_type" string="业态类别"/>
+                    <field name="cr_sydw_operator_name" string="经营者姓名"/>
+                    <field name="cr_sydw_operate_state" string="经营状态"/>
+                    <field name="cr_sydw_operator_phone" string="经营者手机"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="cr_sydw_sydw_form" model="ir.ui.view">
+        <field name="name">cr.sydw.form</field>
+        <field name="model">cr.sydw</field>
+        <field name="arch" type="xml">
+            <form string="商业点位">
+                <group>
+                    <field name="cr_sydw_company" string="所属分公司"/>
+                    <field name="cr_sydw_customer_name" string="客户名称"/>
+                    <field name="cr_sydw_station" string="所在车站"/>
+                    <field name="cr_sydw_part" string="属地站段"/>
+                    <field name="cr_sydw_position" string="经营位置"/>
+                    <field name="cr_sydw_address" string="商铺地址"/>
+                    <field name="cr_sydw_project" string="经营项目"/>
+                    <field name="cr_sydw_project_type" string="业态类别"/>
+                    <field name="cr_sydw_operator_name" string="经营者姓名"/>
+                    <field name="cr_sydw_operate_state" string="经营状态"/>
+                    <field name="cr_sydw_operator_phone" string="经营者手机"/>
+                    <field name="cr_sydw_star" string="星级客户"/>
+                    <field name="cr_sydw_header" string="商铺日常负责人"/>
+                    <field name="cr_sydw_header_phone" string="商铺日常负责人手机"/>
+                    <field name="cr_sydw_others" string="其他从业人员"/>
+                    <field name="cr_sydw_qualifications" string="经营资质"/>
+                    <field name="cr_sydw_EDI" string="消电检"/>
+                    <field name="cr_sydw_start_time" string="经营开始日期"/>
+                    <field name="cr_sydw_end_time" string="经营结束日期"/>
+                    <field name="cr_sydw_shop_image" string="商铺展示图"/>
+                    <field name="cr_sydw_customer_image" string="客户头像"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_cr_sydw">
+        <field name="name">商业点位</field>
+        <field name="res_model">cr.sydw</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem id="menu_cr_sydw_x" parent="menu_cr_sydw"
+              name="商业点位" action="action_cr_sydw" sequence="28"/>
+
+</odoo>
