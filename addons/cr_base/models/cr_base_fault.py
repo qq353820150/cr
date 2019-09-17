@@ -52,3 +52,4 @@ class CrBaseFaultContent(models.Model):
 
     cr_base_refine_type_id =fields.Many2one('cr.base.refine.type')
 
+    card_type = fields.Selection([('none',u'不发牌'),('red',u'红牌'),('yellow',u'黄牌'),('white',u'白牌')],default='none',string=u'问题性质' )

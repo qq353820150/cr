@@ -53,7 +53,7 @@ class CrCkRecord(models.Model):
 
     cr_check_problem_image = fields.Binary(string=u'问题图片', track_visibility='onchange')
 
-    cr_check_problem_nature = fields.Selection([('0',u'不发牌'),('1',u'红牌'),('2',u'黄牌'),('3',u'白牌')],default='0',string=u'问题性质', track_visibility='onchange')
+    cr_check_problem_nature = fields.Selection([('none',u'不发牌'),('red',u'红牌'),('yellow',u'黄牌'),('white',u'白牌')],default='none',string=u'问题性质', track_visibility='onchange')
 
     cr_check_disposal_status = fields.Selection([('0',u'不发牌'),('1',u'处置中'),('2',u'待销号'),('3',u'已销号')],default='0',string=u'处置状态', track_visibility='onchange')
 

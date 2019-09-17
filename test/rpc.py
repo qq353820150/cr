@@ -6,7 +6,7 @@ import json
 
 HOST = 'http://192.168.56.101:8069'
 
-SERVER = 'T0'
+SERVER = 'CR'
 
 def ret(r):
     print 'status_code:', r.status_code
